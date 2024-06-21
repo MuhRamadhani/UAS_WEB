@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  app:
+    restart: always
+    container_name: nur
+    environment:
+      - TZ=Asia/Makassar
+    build:
+      context: .
+    ports:
+      - "8002:8002"
+    volumes:
+      - .:/app
+    command: gunicorn nur.wsgi:application --bind 0.0.0.0:8002 --workers 4
