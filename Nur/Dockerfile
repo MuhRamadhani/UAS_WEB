@@ -12,7 +12,7 @@ RUN apk add --no-cache libffi-dev
 RUN mkdir /app
 WORKDIR /app
 
-# Copy the requirements file into the container at /app
+# Copy the requnirements file into the container at /app
 COPY requirements.txt /app/
 
 # Install Python dependencies
